@@ -18,7 +18,6 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'vim-scripts/indentpython.vim'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'scrooloose/syntastic'
-Plugin 'nvie/vim-flake8'
 Plugin 'crusoexia/vim-monokai'
 Plugin 'scrooloose/nerdtree'
 Plugin 'ctrlpvim/ctrlp.vim'
@@ -39,9 +38,10 @@ colorscheme monokai
 let NERDTreeIgnore=['\.pyc$', '\~$']
 set nu
 set wildignore+=*.so,*.swp,*.pyc
-imap n <Esc>
 map <F2> :NERDTreeToggle<CR>
-inoremap <C-c> <Esc>
+imap <C-c> <Esc>
+let g:syntastic_check_on_open = 1
+
 " Virtualenv support
 py << EOF
 import os
