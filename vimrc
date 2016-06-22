@@ -46,6 +46,9 @@ let g:syntastic_check_on_open = 1
 :set incsearch
 :set smartcase
 
+" vim-reveal is not managed by vundle
+runtime bundle/vim-reveal/ftplugin/markdown.vim
+
 " Virtualenv support
 py << EOF
 import os
