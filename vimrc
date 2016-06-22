@@ -23,6 +23,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'ntpeters/vim-better-whitespace'
+Plugin 'blindFS/vim-reveal'
 
 " Launch Vundle
 call vundle#end()
