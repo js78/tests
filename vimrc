@@ -42,6 +42,9 @@ set wildignore+=*.so,*.swp,*.pyc
 map <F2> :NERDTreeToggle<CR>
 imap <C-c> <Esc>
 let g:syntastic_check_on_open = 1
+:set hlsearch
+:set incsearch
+:set smartcase
 
 " Virtualenv support
 py << EOF
