@@ -23,7 +23,8 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'ntpeters/vim-better-whitespace'
-Plugin 'blindFS/vim-reveal'
+Plugin 'godlygeek/tabular'
+Plugin 'plasticboy/vim-markdown'
 
 " Launch Vundle
 call vundle#end()
@@ -45,9 +46,8 @@ let g:syntastic_check_on_open = 1
 :set hlsearch
 :set incsearch
 :set smartcase
-
-" vim-reveal is not managed by vundle
-runtime bundle/vim-reveal/ftplugin/markdown.vim
+:set showcmd
+:set nofoldenable
 
 " Virtualenv support
 py << EOF
