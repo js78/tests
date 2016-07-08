@@ -17,7 +17,6 @@ Plugin 'gmarik/Vundle.vim'
 " Add Plugin
 Plugin 'vim-scripts/indentpython.vim'
 Plugin 'Valloric/YouCompleteMe'
-Plugin 'scrooloose/syntastic'
 Plugin 'crusoexia/vim-monokai'
 Plugin 'scrooloose/nerdtree'
 Plugin 'ctrlpvim/ctrlp.vim'
@@ -25,6 +24,7 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
+Plugin 'nvie/vim-flake8'
 
 " Launch Vundle
 call vundle#end()
@@ -42,11 +42,19 @@ set nu
 set wildignore+=*.so,*.swp,*.pyc
 map <F2> :NERDTreeToggle<CR>
 imap <C-c> <Esc>
-let g:syntastic_check_on_open = 1
+
+autocmd BufWritePost *.py call Flake8()
+let g:flake8_show_quickfix=0
+let g:flake8_show_in_gutter=1
+
 :set incsearch
+:set ignorecase
 :set smartcase
 :set showcmd
 :set nofoldenable
+:set expandtab
+:set tabstop=4
+:set shiftwidth=4
 
 " Virtualenv support
 py << EOF

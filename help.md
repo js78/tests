@@ -51,3 +51,10 @@ Install bridge-utils
 
 # Search
 - Find word in folder: grep -Hrn 'word' /folder
+
+# Curl
+
+- curl -H "Accept: application/json" -H "Content-Type: application/json" -H "X-Auth-Token: 87008f67b6724aa5a78be0218f0754ec" -X GET http://localhost:8999/v1/serverbackups | json_pp
+- -H=Header
+- -X=Get or Post
+- json_pp = pretty print json
