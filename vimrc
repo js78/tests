@@ -37,7 +37,7 @@ map <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
 let python_highlight_all=1
 syntax on
 colorscheme monokai
-let NERDTreeIgnore=['\.pyc$', '\~$']
+let NERDTreeIgnore=['\.pyc$', '\~$', '__pycache__', '\.egg-info$']
 set nu
 set wildignore+=*.so,*.swp,*.pyc
 map <F2> :NERDTreeToggle<CR>
