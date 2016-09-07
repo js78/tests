@@ -41,6 +41,8 @@ let NERDTreeIgnore=['\.pyc$', '\~$', '__pycache__', '\.egg-info$']
 set nu
 set wildignore+=*.so,*.swp,*.pyc
 map <F2> :NERDTreeToggle<CR>
+nmap <C-k> <C-b>
+nmap <C-j> <C-f>
 imap <C-c> <Esc>
 
 autocmd BufWritePost *.py call Flake8()
