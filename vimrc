@@ -25,6 +25,7 @@ Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'nvie/vim-flake8'
+Plugin 'tmhedberg/SimpylFold'
 
 " Launch Vundle
 call vundle#end()
@@ -44,6 +45,9 @@ map <F2> :NERDTreeToggle<CR>
 nmap <C-k> <C-b>
 nmap <C-j> <C-f>
 imap <C-c> <Esc>
+set foldmethod=indent
+set foldlevel=99
+nnoremap <space> za
 
 autocmd BufWritePost *.py call Flake8()
 let g:flake8_show_quickfix=0

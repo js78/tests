@@ -40,6 +40,7 @@ Install bridge-utils
   Associer une adresse ip à la nouvelle interface créé: sudo ifconfig br-vlan288 1.1.1.2/24 up
   Associer une adresse ip différente sur l'autre noeud
   et ensuite on peut pingué : ping 1.1.1.2 
+- Voir les sockets ouverts: ss -l
 
 # Log
 - Search in all logs: zgrep -i error /var/log/neutron/l3-agent.log*
@@ -58,3 +59,18 @@ Install bridge-utils
 - -H=Header
 - -X=Get or Post
 - json_pp = pretty print json
+
+
+# OpenStack
+
+## Publier
+Les commandes sont lancees en admin pour eviter les problemes
+- Creation du reseau: openstack  network create my --provider-network-type vlan --provider-physical-network run --provider-segment 787
+- Creation du subnet: openstack subnet create --subnet-range 160.0/24 --network 31278fc3-078c-49d9-9af7-fad93d6d0c47 my
+- Creation de la vm: openstack server create --image cirros --flavor 1 --nic net-id=31278fc3-078c-49d9-9af7-fad93d6d0c47 my
+- Creation du routeur: openstack router create my
+- Ajout du subnet au routeur: openstack router add subnet e6225dd5-56bc-4216-8201-d92b664908ec 28b7e4c5-a691-45e5-8212-cb14aa4deb64
+- Ajout de la gateway sur le routeur: router-gateway-set e6225dd5-56bc-4216-8201-d92b664908ec c2a192f1-cb05-4e6a-8d99-fb3e523ce2f8 (la commande n'est pas encore dans openstack)
+- Recuperer l'ip de la vm: openstack server list
+- Recuperer le port associe: openstack port list | grep 160.0.0.3
+- Ajouter une floating ip sur le port vers le reseau de pub: openstack floating ip create net-pub --port 5c0d6614-be1e-4bb6-8fb7-1c0095525f4b
