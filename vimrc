@@ -53,12 +53,14 @@ autocmd BufWritePost *.py call Flake8()
 let g:flake8_show_quickfix=0
 let g:flake8_show_in_gutter=1
 
-:set incsearch
-:set ignorecase
-:set smartcase
-:set showcmd
-:set nofoldenable
-:set expandtab
-:set tabstop=4
-:set shiftwidth=4
-
+set nobackup
+set noswapfile
+set incsearch
+set ignorecase
+set smartcase
+set showcmd
+set nofoldenable
+set expandtab
+set tabstop=4
+set shiftwidth=4
+set clipboard=unnamed
