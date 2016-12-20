@@ -7,7 +7,7 @@
 
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
-HISTCONTROL=ignoreboth
+HISTCONTROL=ignoreboth:erasedups
 
 # append to the history file, don't overwrite it
 shopt -s histappend
@@ -81,4 +81,11 @@ powerline-daemon -q
 POWERLINE_BASH_CONTINUATION=1
 POWERLINE_BASH_SELECT=1
 export POWERLINE_CONFIG_OVERRIDES='ext.shell.theme=default_leftonly'
-. /usr/local/lib/python2.7/dist-packages/powerline/bindings/bash/powerline.sh
+. /usr/local/lib/python3.5/dist-packages/powerline/bindings/bash/powerline.sh
+
+# IceCream environement variable
+export USE_SCHEDULER=build01-icecc01.dev.par.lng
+export CCACHE_COMPRESS=1
+
+# added by travis gem
+[ -f /home/realitix/.travis/travis.sh ] && source /home/realitix/.travis/travis.sh
