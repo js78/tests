@@ -1,11 +1,8 @@
 set nocompatible
+set encoding=utf-8
 filetype off
 let mapleader="\<Space>"
 
-" Set powerline from system installation
-python3 from powerline.vim import setup as powerline_setup
-python3 powerline_setup()
-python3 del powerline_setup
 set laststatus=2
 set t_Co=256
 
@@ -26,14 +23,21 @@ Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'nvie/vim-flake8'
 Plugin 'tmhedberg/SimpylFold'
+Plugin 'majutsushi/tagbar'
+Plugin 'tikhomirov/vim-glsl'
 
 " Launch Vundle
 call vundle#end()
-filetype plugin indent on
+
+" Set powerline from system installation
+python3 from powerline.vim import setup as powerline_setup
+python3 powerline_setup()
+python3 del powerline_setup
 
 " Misc
+filetype plugin indent on
 let g:ycm_autoclose_preview_window_after_completion=1
-set encoding=utf-8
+let g:tagbar_autoclose=1
 map <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
 let python_highlight_all=1
 syntax on
@@ -42,6 +46,7 @@ let NERDTreeIgnore=['\.pyc$', '\~$', '__pycache__', '\.egg-info$']
 set nu
 set wildignore+=*.so,*.swp,*.pyc
 map <F2> :NERDTreeToggle<CR>
+map <F3> :TagbarToggle<CR>
 nmap <C-k> <C-b>
 nmap <C-j> <C-f>
 imap <C-c> <Esc>

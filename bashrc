@@ -62,6 +62,7 @@ fi
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
+alias ipython='ipython --nosep'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
@@ -85,7 +86,6 @@ export POWERLINE_CONFIG_OVERRIDES='ext.shell.theme=default_leftonly'
 
 # IceCream environement variable
 export USE_SCHEDULER=build01-icecc01.dev.par.lng
-export CCACHE_COMPRESS=1
 
 # added by travis gem
 [ -f /home/realitix/.travis/travis.sh ] && source /home/realitix/.travis/travis.sh
