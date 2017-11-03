@@ -55,6 +55,8 @@ set foldlevel=99
 nnoremap <space> za
 
 autocmd BufWritePost *.py call Flake8()
+au BufRead,BufNewFile *.pyi set filetype=python
+
 let g:flake8_show_quickfix=0
 let g:flake8_show_in_gutter=1
 

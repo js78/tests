@@ -63,6 +63,7 @@ alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 alias ipython='ipython --nosep'
+alias fixscroll='tput rmcup'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
@@ -89,3 +90,6 @@ export USE_SCHEDULER=build01-icecc01.dev.par.lng
 
 # added by travis gem
 [ -f /home/realitix/.travis/travis.sh ] && source /home/realitix/.travis/travis.sh
+
+#so as not to be disturbed by Ctrl-S ctrl-Q in terminals:
+stty -ixon
